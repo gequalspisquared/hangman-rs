@@ -137,18 +137,6 @@ fn main() {
     let mut warning: String = String::from("");
     let secret_word = random_word::gen();
     let unique_chars: usize = count_unique_chars(&secret_word);
-    println!("The secret word is: {}", secret_word);
-
-    guesses.push('a');
-    guesses.push('e');
-    guesses.push('i');
-    guesses.push('o');
-    guesses.push('u');
-
-    // while guesses.len < max_guesses {
-    println!("Enter your first initial: ");
-
-    println!("Hello, world!");
 
     while num_incorrect_guesses(&secret_word, &guesses) < 6 &&
           num_correct_guesses(&secret_word, &guesses) != unique_chars {
@@ -174,4 +162,10 @@ fn main() {
     }
 
     draw(&secret_word, &guesses);
+
+    if num_correct_guesses(&secret_word, &guesses) == unique_chars {
+        println!("Congratulations, you won!");
+    } else {
+        println!("You lost :/");
+    }
 }
