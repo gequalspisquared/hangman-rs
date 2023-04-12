@@ -38,6 +38,7 @@ fn num_correct_guesses(secret_word: &str, guesses: &[char]) -> usize {
 }
 
 fn draw_hangman(num_incorrect: usize) {
+    #[rustfmt::skip]
     let art = [
         "|       \n".to_owned() +
         "|       \n"            +
